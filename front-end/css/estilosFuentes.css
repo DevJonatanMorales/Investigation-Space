@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Acme|Open+Sans|Oswald&display=swap');
+/*
+    azul #007BFF;
+    verde #28A745;
+    fondo #EBF0F1;
+*/
+
+.Oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+.Open-Sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.Acme {
+    font-family: 'Acme', sans-serif;
+}
+/* estilos de los input */
+.txtCampo {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+}
+.txtCampoForm {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid rgba(88, 88, 88, 0.5);
+}
+/* valido la clave  */
+input[type='password']:invalid {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid rgb(187, 73, 73) !important;
+}
+/* valido la clave
+input[type='password']:valid {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #28A745 !important;
+}
+*/
+.invalid {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid rgb(187, 73, 73) !important;
+}
+
+.valid {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #28A745 !important;
+}
