@@ -1,3 +1,4 @@
+//funcion que valida si hay campos vacios
 function txtCampoEmpty(txtCampoEmpty) {
     if (txtCampoEmpty.value == '') {
         txtCampoEmpty.className = 'invalid';
@@ -7,22 +8,28 @@ function txtCampoEmpty(txtCampoEmpty) {
 
     }
 }
-
+//limpiar compos
+function limpiarCampo() {
+    txtCampo = document.getElementById('txtEmail');
+    txtCampo.innerText = "";
+}
+// enviamos la peticion al archivo modelo
 function vlrCorreo() {
     let url = '../../../back-end/models/recuperarContrasenaModel.php';
     let btn = document.getElementById('btn');
     $.ajax({
         type: "POST",
         url: url,
-        dataType: 'json',
+        //dataType: 'json',
         data: $("#idform").serialize(),
         beforeSend: function () {
             btn.innerText = "Confirmando...";
         },
         success: function (data) {
             btn.innerText = "Confirmar";
-            console.log(data);
+            console.log('El resultado es: ' + data);
             if (data.result == 1) {
+                limpiarCampo();
                 Swal.fire({
                     icon: 'success',
                     title: 'Exito',
@@ -30,6 +37,7 @@ function vlrCorreo() {
                     confirmButtonText: 'Aceptar',
                 });
             } else {
+                limpiarCampo();
                 Swal.fire({
                     icon: 'warning',
                     title: 'Error',
@@ -37,7 +45,6 @@ function vlrCorreo() {
                     confirmButtonText: 'Aceptar'
                 });
             }
-            //$('#resp').html(data);
         },
         error: function () {
             btn.innerText = "Confirmar";
@@ -45,7 +52,7 @@ function vlrCorreo() {
         }
     });
 }
-
+// valido q no exita campo vacion al dar click al boton
 function vlrFormRecuperarCuenta() {
     let datosCorrectos = true
     let msjError = "";
@@ -69,9 +76,9 @@ function vlrFormRecuperarCuenta() {
 $(document).on("submit", "#idform", function (e) {
     e.preventDefault();//detenemos el envio
     $estadoFormulario = vlrFormRecuperarCuenta();
+
     if ($estadoFormulario == true) {
         vlrCorreo();
     }
 
 })
-
