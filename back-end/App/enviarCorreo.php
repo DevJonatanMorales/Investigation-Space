@@ -1,7 +1,9 @@
 <?php
-function enciarCorreo($asunto,$correo,$body){
+function enviarCorreo($asunto,$correo,$body){
     require_once '../App/PHPMailer/class.phpmailer.php';
     require_once '../App/PHPMailer/class.smtp.php';
+
+    $resultEmail = true;
 
     $mail = new PHPMailer;
 
@@ -9,14 +11,14 @@ function enciarCorreo($asunto,$correo,$body){
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     /* coloca la direccion de tu correo  en la comillas simples*/
-    $mail->varU = 'invetigationspace@gmail.com';
+    $mail->varU = 'InvetigationSpace@gmail.com';
     /* coloca la contraseña de tu correo  en la comillas simples*/
     $mail->varP = '75762178';
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 
     /* coloca la direccion de tu correo en la comillas simples */
-    $mail->setFrom('invetigationspace@gmail.com', 'Investigation-Space');
+    $mail->setFrom('InvetigationSpace@gmail.com', 'Investigation-Space');
     $mail->addAddress($correo);
 
     $mail->isHTML(true);
@@ -25,8 +27,11 @@ function enciarCorreo($asunto,$correo,$body){
     $mail->Body    = $body;
 
     if(!$mail->send()) {
+        $resultEmail = false;
         echo 'Error al enviar correo: ' . $mail->ErrorInfo;
     }
+
+    return $resultEmail;
 }
 
 ?>

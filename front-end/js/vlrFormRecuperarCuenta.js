@@ -28,6 +28,7 @@ function vlrCorreo() {
         success: function (data) {
             btn.innerText = "Confirmar";
             console.log('El resultado es: ' + data);
+            /*
             if (data.result == 1) {
                 limpiarCampo();
                 Swal.fire({
@@ -45,6 +46,7 @@ function vlrCorreo() {
                     confirmButtonText: 'Aceptar'
                 });
             }
+            */
         },
         error: function () {
             btn.innerText = "Confirmar";

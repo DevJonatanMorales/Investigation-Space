@@ -37,9 +37,10 @@ class RecupererarContrasenaModel
 
             $contenido = wordwrap($contenido, 70, "\r\n");
 
-            enciarCorreo('Restaurar contraseña',$correo,$contenido);
-            $resultQuery = true;
-
+            $resultEmail = enviarCorreo('Restaurar contraseña',$correo,$contenido);
+            if ($resultEmail == true) {
+              $resultQuery = true;
+            }
         }
       
         return   $resultQuery;
