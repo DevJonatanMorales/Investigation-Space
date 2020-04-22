@@ -1,35 +1,36 @@
 <?php
-function enviarCorreo($asunto,$correo,$body){
-    require_once '../App/PHPMailer/class.phpmailer.php';
-    require_once '../App/PHPMailer/class.smtp.php';
 
+require_once '../App/PHPMailer/PHPMailerAutoload.php';
+require_once '../App/PHPMailer/class.phpmailer.php';
+require_once '../App/PHPMailer/class.SMTP.php';
+
+// funcion que se encarga de enviar los correos
+function enviarCorreo($name,$email,$body){
     $resultEmail = true;
 
+    //host
     $mail = new PHPMailer;
-
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    /* coloca la direccion de tu correo  en la comillas simples*/
-    $mail->varU = 'InvetigationSpace@gmail.com';
-    /* coloca la contraseña de tu correo  en la comillas simples*/
-    $mail->varP = '75762178';
-    $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
+    $mail->SMTPAuth = true;   
+    $mail->SMTPSecure = 'tls'; 
+    $mail->Username = 'invetigationspace@gmail.com';
+    $mail->Password = '75762178';  
 
-    /* coloca la direccion de tu correo en la comillas simples */
-    $mail->setFrom('InvetigationSpace@gmail.com', 'Investigation-Space');
-    $mail->addAddress($correo);
 
-    $mail->isHTML(true);
+    $mail->setFrom('invetigationspace@gmail.com', $name);
+    $mail->addAddress($email);
+    $mail->addReplyTo('invetigationspace@gmail.com', 'Administrador');
 
-    $mail->Subject = $asunto;
+    $mail->isHTML(true);  
+    $mail->Subject = 'Restaurar contraseña';
     $mail->Body    = $body;
 
     if(!$mail->send()) {
         $resultEmail = false;
-        echo 'Error al enviar correo: ' . $mail->ErrorInfo;
-    }
+        echo 'Message could not be sent. ' . $mail->ErrorInfo;
+    } 
 
     return $resultEmail;
 }

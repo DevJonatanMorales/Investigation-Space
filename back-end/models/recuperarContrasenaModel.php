@@ -12,7 +12,7 @@ class RecupererarContrasenaModel
     //resultado por defecto
     $resultQuery = false;
     //consulta
-    $queryCorreo = "SELECT usuario_id, correo_user FROM tb_usuarios WHERE correo_user = '". $correo ."'";
+    $queryCorreo = "SELECT tb_estudiante.primer_nombre, tb_usuarios.usuario_id, tb_usuarios.correo_user FROM tb_usuarios INNER JOIN tb_estudiante ON tb_usuarios.usuario_id=tb_estudiante.fk_usuario_id WHERE correo_user = '". $correo ."'";
     $resultEmailUser = $conexion->selectSearchDato($queryCorreo);
     if ($resultEmailUser->num_rows > 0) {
       
@@ -37,7 +37,7 @@ class RecupererarContrasenaModel
 
             $contenido = wordwrap($contenido, 70, "\r\n");
 
-            $resultEmail = enviarCorreo('Restaurar contraseña',$correo,$contenido);
+            $resultEmail = enviarCorreo($row['primer_nombre'],$correo,$contenido);
             if ($resultEmail == true) {
               $resultQuery = true;
             }

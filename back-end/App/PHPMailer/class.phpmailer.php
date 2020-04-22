@@ -1,11 +1,37 @@
 <?php
+/**
+ * PHPMailer - PHP email creation and transport class.
+ * PHP Version 5
+ * @package PHPMailer
+ * @link https://github.com/PHPMailer/PHPMailer/ The PHPMailer GitHub project
+ * @author Marcus Bointon (Synchro/coolbru) <phpmailer@synchromedia.co.uk>
+ * @author Jim Jagielski (jimjag) <jimjag@gmail.com>
+ * @author Andy Prevost (codeworxtech) <codeworxtech@users.sourceforge.net>
+ * @author Brent R. Matzelle (original founder)
+ * @copyright 2012 - 2014 Marcus Bointon
+ * @copyright 2010 - 2012 Jim Jagielski
+ * @copyright 2004 - 2009 Andy Prevost
+ * @license http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License
+ * @note This program is distributed in the hope that it will be useful - WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.
+ */
+
+/**
+ * PHPMailer - PHP email creation and transport class.
+ * @package PHPMailer
+ * @author Marcus Bointon (Synchro/coolbru) <phpmailer@synchromedia.co.uk>
+ * @author Jim Jagielski (jimjag) <jimjag@gmail.com>
+ * @author Andy Prevost (codeworxtech) <codeworxtech@users.sourceforge.net>
+ * @author Brent R. Matzelle (original founder)
+ */
 class PHPMailer
 {
     /**
      * The PHPMailer Version number.
      * @var string
      */
-    public $Version = '5.2.27';
+    public $Version = '5.2.28';
 
     /**
      * Email priority.
@@ -252,13 +278,13 @@ class PHPMailer
      * SMTP username.
      * @var string
      */
-    public $varU = '';
+    public $Username = '';
 
     /**
      * SMTP password.
      * @var string
      */
-    public $varP = '';
+    public $Password = '';
 
     /**
      * SMTP auth type.
@@ -1678,8 +1704,8 @@ class PHPMailer
                     }
                     if ($this->SMTPAuth) {
                         if (!$this->smtp->authenticate(
-                            $this->varU,
-                            $this->varP,
+                            $this->Username,
+                            $this->Password,
                             $this->AuthType,
                             $this->Realm,
                             $this->Workstation
@@ -2685,7 +2711,10 @@ class PHPMailer
             if (!self::isPermittedPath($path) or !file_exists($path)) {
                 throw new phpmailerException($this->lang('file_open') . $path, self::STOP_CONTINUE);
             }
-            $magic_quotes = get_magic_quotes_runtime();
+            $magic_quotes = false;
+            if( version_compare(PHP_VERSION, '7.4.0', '<') ) {
+                $magic_quotes = get_magic_quotes_runtime();
+            }
             if ($magic_quotes) {
                 if (version_compare(PHP_VERSION, '5.3.0', '<')) {
                     set_magic_quotes_runtime(false);
