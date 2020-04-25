@@ -1,8 +1,8 @@
 <?php
 
-require_once '../App/PHPMailer/Exception.php';
-require_once '../App/PHPMailer/PHPMailer.php';
-require_once '../App/PHPMailer/SMTP.php';
+require_once '../App/PHPMailer/class.phpmailer.php';
+require_once '../App/PHPMailer/class.smtp.php';
+require_once '../App/PHPMailer/PHPMailerAutoload.php';
 
 // funcion que se encarga de enviar los correos
 function enviarCorreo($name,$email,$body){
@@ -13,8 +13,8 @@ function enviarCorreo($name,$email,$body){
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->Port = 587;
-    $mail->SMTPAuth = true;   
-    $mail->SMTPSecure = 'tls'; 
+    $mail->SMTPAuth = true; 
+    $mail->SMTPSecure = 'tls';   
     $mail->Username = 'invetigationspace@gmail.com';
     $mail->Password = '75762178';  
 
@@ -24,7 +24,7 @@ function enviarCorreo($name,$email,$body){
     $mail->addReplyTo('invetigationspace@gmail.com', 'Administrador');
 
     $mail->isHTML(true);  
-    $mail->Subject = 'Restaurar contraseña';
+    $mail->Subject = 'Restaurar Contraseña';
     $mail->Body    = $body;
 
     if(!$mail->send()) {

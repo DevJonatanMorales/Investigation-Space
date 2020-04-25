@@ -33,7 +33,7 @@ class RecupererarContrasenaModel
             $id = $conexion->encryption($row['usuario_id']);
 
             $contenido = "Para cambiar la contraseña
-            <a href=\"http://localhost/Investigation-Space/front-end/view/Login/RecuperarClave.php?_id=".$id."\">click aqui</a> introduzca el siguiente codigo <b>".$codigoBerificacion."</b> y digite la nueva contraseña y confirme y por ultimo de click en guardar cambios";
+            <a href=\"http://localhost/Investigation-Space/front-end/view/Login/RestaurarClave.php?_id=".$id."\">click aqui</a> introduzca el siguiente codigo <b>".$codigoBerificacion."</b> y digite la nueva contraseña y confirme y por ultimo de click en guardar cambios";
 
             $contenido = wordwrap($contenido, 70, "\r\n");
 
