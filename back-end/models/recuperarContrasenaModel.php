@@ -61,7 +61,7 @@ class RecupererarContrasenaModel
 
       $resultCodigo = array(
         'userId' => $row['usuario_id'],
-        'codigo' => $row['condigo'],
+        'codigo' => $row['codigo'],
         'fecha' => $row['fecha']
       );
     }
@@ -105,6 +105,13 @@ if (isset($_POST['accion'])) {
       break;
   }
 } else {
+  $resultCodigo = RecupererarContrasenaModel::vlrCodigo(DataBase::decryption($_POST['userId']));
+
+  if ($resultCodigo === false) {
+    echo json_encode(array('result' => 0));
+  } else {
+    echo json_encode($resultCodigo);
+  }
   
 }
 ?>
