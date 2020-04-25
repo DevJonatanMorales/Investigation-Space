@@ -1,8 +1,8 @@
 <?php
 
-require_once '../App/PHPMailer/PHPMailerAutoload.php';
-require_once '../App/PHPMailer/class.phpmailer.php';
-require_once '../App/PHPMailer/class.SMTP.php';
+require_once '../App/PHPMailer/Exception.php';
+require_once '../App/PHPMailer/PHPMailer.php';
+require_once '../App/PHPMailer/SMTP.php';
 
 // funcion que se encarga de enviar los correos
 function enviarCorreo($name,$email,$body){
