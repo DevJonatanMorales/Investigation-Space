@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <?php require_once('../layout/headIndex.php'); ?>
-    <script src="../../js/vlrFormRecuperarCuenta.js"></script>
+    <script src="../../js/vlrFormRestaurarCuenta.js"></script>
   </head>
 <body>
   <?php $estado = 'clave'; require_once('../menus/menuIndex.php'); ?>

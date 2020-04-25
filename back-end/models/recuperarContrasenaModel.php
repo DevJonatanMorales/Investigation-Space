@@ -1,7 +1,7 @@
 <?php
 require_once('./dataBase.php');
 require_once('../App/enviarCorreo.php');
-sleep(1);
+
 class RecupererarContrasenaModel
 {
 
@@ -46,6 +46,44 @@ class RecupererarContrasenaModel
         return   $resultQuery;
     }
   }
+  //funcion para validar el codigo
+  public static function vlrCodigo($id)
+  {
+    //creo un objeto
+    $conexion = new DataBase();
+    //result
+    $resultCodigo = false;
+    $query = "SELECT usuario_id, codigo, fecha FROM `tb_usuarios` WHERE usuario_id = '". $id ."'";
+    $resultQuery = $conexion->selectSearchDato($query);
+
+    if ($resultQuery->num_rows > 0) {
+      $row = $resultQuery->fetch_assoc();
+
+      $resultCodigo = array(
+        'userId' => $row['usuario_id'],
+        'codigo' => $row['condigo'],
+        'fecha' => $row['fecha']
+      );
+    }
+    
+    return $resultCodigo;
+  }
+  //restaurar clave
+  public static function restauraClave($id, $clave)
+  {
+    //result
+    $resultClave = false;
+    //query
+    $query = "UPDATE `tb_usuarios` SET `clave_user`= '". $clave ."'`codigo`= '',`fecha`= '' WHERE `usuario_id`= '". $id ."'";
+
+    $resultQuery = $conexion->insertUpdateDato($query);
+
+    if ($resultQuery === true) {
+      $resultClave = true;
+    }
+
+    return $resultClave;
+  }
 }
 
 if (isset($_POST['accion'])) {
@@ -66,5 +104,7 @@ if (isset($_POST['accion'])) {
       // code...
       break;
   }
+} else {
+  
 }
 ?>
