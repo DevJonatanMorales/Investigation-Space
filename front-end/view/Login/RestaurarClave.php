@@ -38,7 +38,7 @@
     <h1 class="text-danger text-center text-white"><i class="fas fa-exclamation-triangle"></i></h1>
     <h4 class="card-title Open-Sans text-center text-white">Advertencia</h4>
     <p class="card-text text-white">El plazo de 24 horas para cambiar la contraseña ya expiro, por favor realice una nueva solicitud.</p>
-    <a class="btn btn-success Open-Sans" href="?controlador=RecuperarCuenta&accion=recuperarCuenta">Nueva solicitud</a>
+    <a class="btn btn-success Open-Sans" href="RecuperarClave.php">Nueva solicitud</a>
   </div>
 </body>
 </html>
