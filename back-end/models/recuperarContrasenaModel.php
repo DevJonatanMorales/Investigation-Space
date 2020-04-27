@@ -53,17 +53,30 @@ class RecupererarContrasenaModel
     $conexion = new DataBase();
     //result
     $resultCodigo = false;
+    //fecha actual
+    date_default_timezone_set("America/El_Salvador");
+    $fechaActual = date("Y")."-".date("m")."-".date("d")." ".date("g:i");
+
     $query = "SELECT usuario_id, codigo, fecha FROM `tb_usuarios` WHERE usuario_id = '". $id ."'";
     $resultQuery = $conexion->selectSearchDato($query);
 
     if ($resultQuery->num_rows > 0) {
       $row = $resultQuery->fetch_assoc();
 
-      $resultCodigo = array(
-        'userId' => $row['usuario_id'],
-        'codigo' => $row['codigo'],
-        'fecha' => $row['fecha']
-      );
+      if(strtotime($fechaActual) > strtotime($row['fecha'])){
+        $resultCodigo = array(
+          'userId' => $row['usuario_id'],
+          'codigo' => $row['codigo'],
+          'fecha' => 0
+        );
+      } else if(strtotime($fechaActual) < strtotime($row['fecha'])){
+        $resultCodigo = array(
+          'userId' => $row['usuario_id'],
+          'codigo' => $row['codigo'],
+          'fecha' => 1
+        );
+      }
+      
     }
     
     return $resultCodigo;
@@ -71,10 +84,12 @@ class RecupererarContrasenaModel
   //restaurar clave
   public static function restauraClave($id, $clave)
   {
+    //creo un objeto
+    $conexion = new DataBase();
     //result
     $resultClave = false;
     //query
-    $query = "UPDATE `tb_usuarios` SET `clave_user`= '". $clave ."'`codigo`= '',`fecha`= '' WHERE `usuario_id`= '". $id ."'";
+    $query = "UPDATE `tb_usuarios` SET `clave_user`= '". $clave ."',`codigo`= '',`fecha`= '' WHERE `usuario_id`= '". $id ."'";
 
     $resultQuery = $conexion->insertUpdateDato($query);
 
@@ -101,11 +116,21 @@ if (isset($_POST['accion'])) {
       break;
 
     case 'RestaurarCuenta':
-      // code...
+      $clave = DataBase::clearFields($_POST['clave']);
+
+      $resultUpdate = RecupererarContrasenaModel::restauraClave(DataBase::clearFields($_POST['userID']), DataBase::encryption($clave));
+
+      if ($resultUpdate === true) {
+        echo json_encode(array('result' => 1));
+      } else {
+        echo json_encode(array('result' => 0));
+      }
+      
       break;
   }
 } else {
-  $resultCodigo = RecupererarContrasenaModel::vlrCodigo(DataBase::decryption($_POST['userId']));
+  $getId = DataBase::clearFields($_POST['userId']);
+  $resultCodigo = RecupererarContrasenaModel::vlrCodigo(DataBase::decryption($getId));
 
   if ($resultCodigo === false) {
     echo json_encode(array('result' => 0));
