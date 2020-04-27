@@ -99,6 +99,7 @@ function restauraClave(parametros) {
       console.log(data);
 
       if (data.result === 1) {
+        limpiarTxt();
         Swal.fire({
           icon: "success",
           title: "EXITO",
