@@ -6,8 +6,8 @@
     </head>
     <body>
         <div class="d-flex" id="wrapper">
-            <!-- Sidebar -->
             <div class="bg-dark text-white border-right" id="sidebar-wrapper">
+                <!-- Sidebar -->
                 <?php require_once('../menus/menuPrincipal.php');?>
                 <!-- Page Content -->
                 <div id="page-content-wrapper">

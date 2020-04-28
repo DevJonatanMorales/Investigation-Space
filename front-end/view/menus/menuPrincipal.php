@@ -22,10 +22,10 @@ if (!$_SESSION['USERNAME']) {
     </div>
     <div class="list-group list-group-flush">
         <a href="index.php" class="list-group-item list-group-item-action bg-dark text-white"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#" class="list-group-item list-group-item-action bg-dark text-white"><i class="fas fa-search"></i> Publicaciones</a>
-        <a href="#" class="list-group-item list-group-item-action bg-dark text-white"><i class="fas fa-bell"></i> Notificaciones</a>
-        <a href="#" class="list-group-item list-group-item-action bg-dark text-white"><i class="fas fa-user-friends"></i> Amigos</a>
-        <a href="#" class="list-group-item list-group-item-action bg-dark text-white"><i class="fas fa-comments"></i> Chat</a>
+        <a href="misPublicaciones.php" class="list-group-item list-group-item-action bg-dark text-white"><i class="fas fa-search"></i> Publicaciones</a>
+        <a href="notificaciones.php" class="list-group-item list-group-item-action bg-dark text-white"><i class="fas fa-bell"></i> Notificaciones</a>
+        <a href="listAmigos.php" class="list-group-item list-group-item-action bg-dark text-white"><i class="fas fa-user-friends"></i> Amigos</a>
+        <a href="chat.php" class="list-group-item list-group-item-action bg-dark text-white"><i class="fas fa-comments"></i> Chat</a>
     </div>
 </div>
 <script src="../../js/cerraSession.js"></script>
