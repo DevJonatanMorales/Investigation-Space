@@ -22,7 +22,7 @@
                             <div class="section col-sm-7 col-md-7 col-lg-7 bg-white">
                                 <div class='card col-lg-12'>
                                     <div class='card-header bg-success'>
-                                        <h5 class='card-title text-white text-center'>
+                                        <h5 class='card-title text-white text-center Oswald'>
                                             Actualizar Contraseña
                                         </h5>
                                     </div>
@@ -30,21 +30,21 @@
                                         <div class='card-body'>
                                         <div class='row'>
                                             <div class='form-group col-lg-12'>
-                                                <label for='text'>Nueva Contraseña</label>
+                                                <label class="Open-Sans" for='text'>Nueva Contraseña</label>
                                                 <input type="hidden" name="accion">
-                                                <input class='txtCampoForm' type='password' name="txtNewClave" id='txtNewClave' value="" pattern="[A-Z]{1}[a-z]{5}[0-9]{2}" placeholder="" onblur="campoVlr()" onkeyup="campoVlr()">
+                                                <input class='txtCampoForm Open-Sans' type='password' name="txtNewClave" id='txtNewClave' value="" pattern="[A-Z]{1}[a-z]{5}[0-9]{2}" placeholder="" onblur="campoVlr()" onkeyup="campoVlr()">
                                             </div>
                                             <div class='form-group col-lg-12'>
-                                                <label for='text'>Confirmar Contraseña</label>
+                                                <label class="Open-Sans" for='text'>Confirmar Contraseña</label>
                                                 <input type="hidden" name="txtClave" id="txtClave" value="">
-                                                <input class='txtCampoForm' type='password' name="txtConfirClave" id='txtConfirClave' value="" pattern="[A-Z]{1}[a-z]{5}[0-9]{2}" onblur="campoVlr()" onkeyup="campoVlr()">
+                                                <input class='txtCampoForm Open-Sans' type='password' name="txtConfirClave" id='txtConfirClave' value="" pattern="[A-Z]{1}[a-z]{5}[0-9]{2}" onblur="campoVlr()" onkeyup="campoVlr()">
                                             </div>
                                             <div class='form-group col-lg-12'>
-                                                <label for='text'>Contraseña Actual</label>
-                                                <input class='txtCampoForm' type='password' name="txtClaveActual" id='txtClaveActual' value="" pattern="[A-Z]{1}[a-z]{5}[0-9]{2}" onblur="campoVlr()" onkeyup="campoVlr()">
+                                                <label class="Open-Sans" for='text'>Contraseña Actual</label>
+                                                <input class='txtCampoForm Open-Sans' type='password' name="txtClaveActual" id='txtClaveActual' value="" pattern="[A-Z]{1}[a-z]{5}[0-9]{2}" onblur="campoVlr()" onkeyup="campoVlr()">
                                             </div>
                                             <div class='form-group col-lg-12'>
-                                                <button class='btn btn-primary my-4' id='btnActualizar' type='submi'>
+                                                <button class='btn btn-primary my-4 Oswald' id='btnActualizar' type='submi'>
                                                 <i class="fas fa-user-cog"></i>
                                                     Actualizar
                                                 </button>

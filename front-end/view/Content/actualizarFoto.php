@@ -21,7 +21,7 @@
                             <div class="section col-sm-7 col-md-7 col-lg-7 bg-white">
                                 <div class='card col-lg-12'>
                                     <div class='card-header bg-success'>
-                                        <h5 class='card-title text-white text-center'>
+                                        <h5 class='card-title text-white text-center Oswald'>
                                           <i class="fas fa-camera"></i>
                                           Actualizar Foto
                                         </h5>
@@ -31,20 +31,21 @@
                                             <div class='row'>
                                             <input type="hidden" name="accion" value="actualizar">
                                                 <div class='form-group col-lg-12 text-center'>
-                                                    <label for="text">Vista Previa</label>
+                                                    <label class="Open-Sans" for="text">Vista Previa</label>
                                                 </div>
+                                                
                                                 <div class='form-group col-lg-12 text-center'>
                                                     <img id="blah" class="rounded prevPhoto" src="" alt="">
                                                 </div>  
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
-                                                        <button class="btn btn-outline-primary" type="submit" id="inputGroupFileAddon03">
+                                                        <button class="btn btn-outline-primary Open-Sans" type="submit" id="inputGroupFileAddon03">
                                                             Subir
                                                         </button>
                                                     </div>
                                                     <div class="custom-file">
-                                                        <input type="file" name="foto" class="custom-file-input" id="txtFile">
-                                                        <label class="custom-file-label" for="text" id="txtDescripcion">
+                                                        <input type="file" name="foto" class="custom-file-input Open-Sans" id="txtFile">
+                                                        <label class="custom-file-label Open-Sans" for="text" id="txtDescripcion">
                                                             Elija el archivo
                                                         </label>
                                                     </div>

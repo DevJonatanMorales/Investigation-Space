@@ -11,6 +11,7 @@
                 <?php require_once('../menus/menuPrincipal.php');?>
                 <!-- Page Content -->
                 <div id="page-content-wrapper">
+                    <!-- Barrar-->
                     <nav class="navbar navbar-expand-lg navbar-light bg-primary border-bottom">
                         <button class="btnMenu btn" id="menu-toggle">
                             <span><i class="fas fa-ellipsis-v"></i></span>
@@ -21,7 +22,7 @@
                             <div class="section col-sm-7 col-md-7 col-lg-7 bg-white">
                                 <div class='card col-lg-12'>
                                     <div class='card-header bg-success'>
-                                        <h5 class='card-title text-white text-center'>
+                                        <h5 class='card-title text-white text-center Oswald'>
                                             Actualizar Datos Personales
                                         </h5>
                                     </div>
@@ -29,56 +30,56 @@
                                         <div class='card-body'>
                                         <div class='row'>
                                             <div class='form-group col-lg-6'>
-                                                <label for='text'>Primer Nombre</label>
+                                                <label class="Open-Sans" for='text'>Primer Nombre</label>
                                                 <input type="hidden" name="accion" value="actualizarDatos">
-                                                <input class='txtCampoForm' type='text' name="txtPrimerNombre" id='txtPrimerNombre' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
+                                                <input class='txtCampoForm Open-Sans' type='text' name="txtPrimerNombre" id='txtPrimerNombre' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
                                             </div>
                                             <div class='form-group col-lg-6'>
-                                                <label for='text'>Segundo Nombre</label>
-                                                <input class='txtCampoForm' type='text' name="txtSegundoNombre" id='txtSegundoNombre' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
+                                                <label class="Open-Sans" for='text'>Segundo Nombre</label>
+                                                <input class='txtCampoForm Open-Sans' type='text' name="txtSegundoNombre" id='txtSegundoNombre' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
                                             </div>
                                             <div class='form-group col-lg-6'>
-                                                <label for='text'>Apellido Paterno</label>
-                                                <input class='txtCampoForm' type='text' name="txtApellidoPaterno" id='txtApellidoPaterno' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
+                                                <label class="Open-Sans" for='text'>Apellido Paterno</label>
+                                                <input class='txtCampoForm Open-Sans' type='text' name="txtApellidoPaterno" id='txtApellidoPaterno' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
                                             </div>
                                             <div class='form-group col-lg-6'>
-                                                <label for='text'>Apellido Materno</label>
-                                                <input class='txtCampoForm' type='text' name="txtApellidoMaterno" id='txtApellidoMaterno' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
+                                                <label class="Open-Sans" for='text'>Apellido Materno</label>
+                                                <input class='txtCampoForm Open-Sans' type='text' name="txtApellidoMaterno" id='txtApellidoMaterno' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
                                             </div>
                                             <div class='form-group col-lg-6'>
-                                                <label for='text'>Fecha de Nacimiento</label>
-                                                <input class='txtCampoForm' type='date' name="txtFechNaci" id='txtFechNaci' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
+                                                <label class="Open-Sans" for='text'>Fecha de Nacimiento</label>
+                                                <input class='txtCampoForm Open-Sans' type='date' name="txtFechNaci" id='txtFechNaci' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
                                             </div>
                                             <div class='form-group col-lg-6'>
-                                                <label for='text'>Genero</label>
-                                                <select name="txtGenero" id="txtGenero" class="form-control">
+                                                <label class="Open-Sans" for='text'>Genero</label>
+                                                <select name="txtGenero" id="txtGenero" class="form-control Open-Sans">
                                                     <option value="0"> Seleccione </option>
                                                     <option value="Femenino"> Femenino </option>
                                                     <option value="Masculino"> Masculino </option>
                                                 </select>
                                             </div>
                                             <div class='form-group col-lg-6'>
-                                                <label for='text'>Universidad</label>
-                                                <input class='txtCampoForm' type='text' name="txtUniversidad" id='txtUniversidad' value=""onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
+                                                <label class="Open-Sans" for='text'>Universidad</label>
+                                                <input class='txtCampoForm Open-Sans' type='text' name="txtUniversidad" id='txtUniversidad' value=""onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
                                             </div>
                                             <div class='form-group col-lg-6'>
-                                                <label for='text'>Facultad</label>
-                                                <input class='txtCampoForm' type='text' name="txtfacultad" id='txtfacultad' value=""onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
+                                                <label class="Open-Sans" for='text'>Facultad</label>
+                                                <input class='txtCampoForm Open-Sans' type='text' name="txtfacultad" id='txtfacultad' value=""onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
                                             </div>
                                             <div class='form-group col-lg-6'>
-                                                <label for='text'>Carrera</label>
-                                                <input class='txtCampoForm' type='text' name="txtCarrera" id='txtCarrera' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
+                                                <label class="Open-Sans" for='text'>Carrera</label>
+                                                <input class='txtCampoForm Open-Sans' type='text' name="txtCarrera" id='txtCarrera' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
                                             </div>
                                             <div class='form-group col-lg-6'>
-                                                <label for='text'>Correo</label>
-                                                <input class='txtCampoForm' type='email' name="txtCorreo" id='txtCorreo' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
+                                                <label class="Open-Sans" for='text'>Correo</label>
+                                                <input class='txtCampoForm Open-Sans' type='email' name="txtCorreo" id='txtCorreo' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
                                             </div>
                                             <div class='form-group col-lg-6'>
-                                                <label for='text'>Telefono</label>
-                                                <input class='txtCampoForm' type='text' name="txtTelefono" id='txtTelefono' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
+                                                <label class="Open-Sans" for='text'>Telefono</label>
+                                                <input class='txtCampoForm Open-Sans' type='text' name="txtTelefono" id='txtTelefono' value="" onblur="txtCampoEmpty(this)" onkeyup="txtCampoEmpty(this)">
                                             </div>
                                             <div class='form-group col-lg-6'>
-                                                <button class='btn btn-primary my-4' id='btnActualizar' type='submi'>
+                                                <button class='btn btn-primary my-4 Open-Sans' id='btnActualizar' type='submi'>
                                                 <i class='fas fa-user-edit'></i>
                                                     Actualizar Datos
                                                 </button>

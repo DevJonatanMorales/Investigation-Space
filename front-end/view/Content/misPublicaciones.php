@@ -5,36 +5,41 @@
   <script src=""></script>
 </head>
 <body>
-  <div class="d-flex" id="wrapper">
+  <div class="d-flex" id="wrapper"> <!-- Sidebar -->
     <div class="bg-dark text-white border-right" id="sidebar-wrapper">
-      <!-- Sidebar -->
+      <!-- Menu lateral -->
       <?php require_once('../menus/menuPrincipal.php');?>
       <!-- Page Content -->
       <div id="page-content-wrapper">
-        <!-- barrar -->
+        <!-- Barrar-->
         <nav class="navbar navbar-expand-lg navbar-light bg-primary border-bottom">
-          <button class="btnMenu btn" id="menu-toggle">
-              <span><i class="fas fa-ellipsis-v"></i></span>
-          </button>
+            <button class="btnMenu btn" id="menu-toggle">
+                <span><i class="fas fa-ellipsis-v"></i></span>
+            </button>
         </nav>
-        <section class="container bg-white col-md-11">
-          <div class='card-header bg-success'>
-            <h5 class='card-title text-white text-center'>
-              Publicaciones
-            </h5>
-          </div>
 
-          <nav class="navbar navbar-light bg-light">
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-            </form>
-            <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
-          </nav>
-        </section>
+        <div class="container-fluid">
+          <div class="d-flex justify-content-between divMain">
+            <section class="container bg-white col-sm-7 col-md-7 ">
+              <nav class="navbar navbar-light bg-success">
+                <a class="navbar-brand Oswald text-white" href="#">Publicaciones</a>
+                <form class="form-inline">
+                  <input class="form-control mr-sm-2 Open-Sans" type="text" placeholder="Buscar">
+                  <button class="btn btn-outline-light my-2 my-sm-0 Open-Sans" type="submit">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </form>
+              </nav>
+            </section>
+            
+            <!-- nueva publicaciones -->
+            <?php require_once('../layout/newPublicacion.php'); ?>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
   <!-- Menu Toggle Script -->
   <script>
     $("#menu-toggle").click(function(e) {
