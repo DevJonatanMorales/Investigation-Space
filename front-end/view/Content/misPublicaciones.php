@@ -17,16 +17,30 @@
               <span><i class="fas fa-ellipsis-v"></i></span>
           </button>
         </nav>
-        <h1>Pag. Publicaciones</h1>
+        <section class="container bg-white col-md-11">
+          <div class='card-header bg-success'>
+            <h5 class='card-title text-white text-center'>
+              Publicaciones
+            </h5>
+          </div>
+
+          <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
+          </nav>
+        </section>
       </div>
     </div>
   </div>
   <!-- Menu Toggle Script -->
   <script>
-      $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-      });
+    $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+    });
   </script>
 </body>
 </html>

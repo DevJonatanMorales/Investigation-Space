@@ -1,77 +1,78 @@
-@import url('estilosFuentes.css');
+@import url("estilosFuentes.css");
 
 body {
-    background-color: #EBF0F1;
-    overflow-x: hidden;
+  background-color: #ebf0f1;
+  overflow-x: hidden;
 }
 
 #sidebar-wrapper {
-    min-height: 100vh;
-    margin-left: -15rem;
-    -webkit-transition: margin .25s ease-out;
-    -moz-transition: margin .25s ease-out;
-    -o-transition: margin .25s ease-out;
-    transition: margin .25s ease-out;
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
 }
 
 #page-content-wrapper .navbar .btnMenu {
-    background-color: #007BFF;
-    padding: 0px 0px;
-    color: #EBF0F1;
-    font-size: 30px;
-    border: 1px solid #007BFF;
+  background-color: #007bff;
+  padding: 0px 0px;
+  color: #ebf0f1;
+  font-size: 30px;
+  border: 1px solid #007bff;
 }
 
-#page-content-wrapper .navbar .btnMenu span{
-    padding: 0px 8px;
+#page-content-wrapper .navbar .btnMenu span {
+  padding: 0px 8px;
 }
 
 #sidebar-wrapper .sidebar-heading {
-    padding: 0.875rem 1.25rem;
-    font-size: 1.5rem;
-    border-bottom: 1px solid rgb(255, 255, 255, 0.5);
+  padding: 0.875rem 1.25rem;
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgb(255, 255, 255, 0.5);
 }
 
 .itmes {
-    padding: 10px;
+  padding: 10px;
 }
 
-.card-body, .list-group-item {
-    border-bottom: 1px solid rgb(255, 255, 255, 0.5) !important;
+.card-body,
+.list-group-item {
+  border-bottom: 1px solid rgb(255, 255, 255, 0.5) !important;
 }
 
-.foto{
-    display: block;
-    margin: 5px auto;
-    border: 2px solid #FFFFFF;
+.foto {
+  display: block;
+  margin: 5px auto;
+  border: 2px solid #ffffff;
 }
 
 #sidebar-wrapper .list-group {
-    width: 15rem;
+  width: 15rem;
 }
 
 #page-content-wrapper {
-    min-width: 100vw;
+  min-width: 100vw;
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 .divMain {
-    margin: 5px 0px 0px 0px;
+  margin: 5px 0px 0px 0px;
 }
 .aside {
-    border-top: 3px solid #28A745;
+  border-top: 3px solid #28a745;
 }
 .section {
-    padding: 0px !important;
+  padding: 0px !important;
 }
 .media {
-    border-top: 3px solid #FFFFFF;
+  border-top: 3px solid #ffffff;
 }
 #card {
-    padding: 0px 20px;
+  padding: 0px 20px;
 }
 /* estilo para cambiar foto */
 .contener-foto-user {
@@ -94,7 +95,7 @@ body {
 }
 
 .contener-foto-user .contener-foto .itemFoto {
-    text-decoration: none;
+  text-decoration: none;
   min-width: 100%;
   font-size: 11px;
   height: 50%;
@@ -102,25 +103,25 @@ body {
 /*-------------------------------Vista previa foto-------------------------------*/
 
 .prevPhoto {
-    src: url(../img/defect.jpg);
-    max-width: 100px;
-    max-height: 100px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    margin: auto;
+  src: url(../img/defect.jpg);
+  max-width: 100px;
+  max-height: 100px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin: auto;
 }
 @media (min-width: 768px) {
-    #sidebar-wrapper {
-        margin-left: 0;
-    }
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
 
-    #page-content-wrapper {
-        min-width: 0;
-        width: 100%;
-    }
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
 
-    #wrapper.toggled #sidebar-wrapper {
-        margin-left: -15rem;
-    }
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
 }

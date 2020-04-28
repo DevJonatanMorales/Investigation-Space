@@ -1,5 +1,5 @@
 
-<div class="aside bg-white col-sm-5 col-md-4 col-lg-4">
+<div id="asideID" class="aside bg-white col-sm-5 col-md-4 col-lg-4">
     <div class="my-2">
         <h5 class="card-title ">Últimas solicitudes</h5>
     </div>
