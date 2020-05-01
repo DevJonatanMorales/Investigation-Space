@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <?php require_once('../layout/headMain.php'); ?>
-  <script src=""></script>
+  <!--<script src=""></script>-->
 </head>
 <body>
   <div class="d-flex" id="wrapper"> <!-- Sidebar -->

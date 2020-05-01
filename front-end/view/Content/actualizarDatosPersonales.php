@@ -80,7 +80,7 @@
                                             </div>
                                             <div class='form-group col-lg-6'>
                                                 <button class='btn btn-primary my-4 Open-Sans' id='btnActualizar' type='submi'>
-                                                <i class='fas fa-user-edit'></i>
+                                                <i class='fas fa-user-edit Oswald'></i>
                                                     Actualizar Datos
                                                 </button>
                                             </div>

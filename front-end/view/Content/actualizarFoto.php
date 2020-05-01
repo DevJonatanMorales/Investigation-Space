@@ -18,7 +18,7 @@
                     </nav>
                     <div class="container-fluid">
                         <div class="d-flex justify-content-between divMain">
-                            <div class="section col-sm-7 col-md-7 col-lg-7 bg-white">
+                            <div class="section col-sm-7 col-md-7 col-lg-7 ">
                                 <div class='card col-lg-12'>
                                     <div class='card-header bg-success'>
                                         <h5 class='card-title text-white text-center Oswald'>
@@ -39,7 +39,7 @@
                                                 </div>  
                                                 <div class="input-group mb-3">
                                                     <div class="input-group-prepend">
-                                                        <button class="btn btn-outline-primary Open-Sans" type="submit" id="inputGroupFileAddon03">
+                                                        <button class="btn btn-outline-primary Oswald" type="submit" id="inputGroupFileAddon03">
                                                             Subir
                                                         </button>
                                                     </div>

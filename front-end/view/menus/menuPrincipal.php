@@ -7,9 +7,10 @@ if (!$_SESSION['USERNAME']) {
 <div class="sidebar-heading Acme">Investigation Space</div>
     <div class="card bg-dark " style="width: 15rem; ">
       <div id="contener-foto-user" class="foto contener-foto-user rounded">
-        <img src="../../img/<?php echo $_SESSION['PHOTO']; ?>" class="bg-white perfilUser" alt="Error" min-width="99px" min-height="98px" max-width="99px" max-height="98px">
+        <img src="../../img/<?php echo $_SESSION['PHOTO']; ?>" class="bg-white perfilUser" alt="Error" width="90px" height="95px">
+        <input type="hidden" id="userID" name="userID" value="<?php echo $_SESSION['USER_ID'] ?>">
         <div id="contener-foto" class="contener-foto">
-          <a id="btnActualizar" href="actualizarFoto.php" class="text-white itemFoto Open-Sans"><i class="fas fa-camera"></i> actualizar</a>
+          <a id="btnActualizar" href="actualizarFoto.php" class="text-white itemFoto Open-Sans my-2"><i class="fas fa-camera"></i> actualizar</a>
         </div>
       </div>
         <div class="card-body">

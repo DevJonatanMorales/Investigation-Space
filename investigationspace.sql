@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-04-2020 a las 01:21:32
+-- Tiempo de generación: 01-05-2020 a las 03:58:52
 -- Versión del servidor: 10.4.10-MariaDB
 -- Versión de PHP: 7.2.25
 
@@ -107,9 +107,9 @@ CREATE TABLE `tb_detalle_estudiante` (
 INSERT INTO `tb_detalle_estudiante` (`detalle_estudiante_id`, `fk_estudiante_id`, `nombre_universidad`, `facultad_universidad`, `carrera_universidad`) VALUES
 (1, 1, 'Gerardo Barrios', 'Ciendia y Tecnologia', 'Ing, en Sistemas'),
 (2, 2, 'Universidad Gerardo Barrios', 'Ciencia y tecnologia', 'Licenciatura en comp'),
-(3, 3, 'UGB', 'Ciencia y Tecnologia', 'ing. en sistemas'),
-(4, 4, 'UGB', 'Ciencia y Tecnologia', 'ing. en sistemas'),
-(5, 5, 'Don Bosko', 'Ciencias de la Salud', 'Tecnico en Enfermeri');
+(29, 29, 'UGB', 'Ciencia y Tecnologia', 'ing. en sistemas'),
+(30, 30, 'UGB', 'Ciencia y Tecnologia', 'ing. en sistemas'),
+(31, 31, 'Don Bosko', 'Ciencias de la Salud', 'Tecnico en Enfermeri');
 
 -- --------------------------------------------------------
 
@@ -136,9 +136,9 @@ CREATE TABLE `tb_estudiante` (
 INSERT INTO `tb_estudiante` (`estudiante_id`, `fk_usuario_id`, `photo`, `primer_nombre`, `segundo_nombre`, `apellido_paterno`, `apellido_materno`, `fecha_nacimiento`, `genero_estudiante`) VALUES
 (1, 1, 'user.png', 'Jonatan', 'Isai', 'Morales', 'Orellana', '1998-04-17', 'Masculino'),
 (2, 2, 'defect.jpg', 'Josue', 'David', 'Morales', 'Orellana', '1995-03-02', 'Masculino'),
-(3, 3, 'defect.jpg', 'Geylin', 'Azucena', 'Orellana', 'Ortiz', '2013-07-30', 'Femenino'),
-(4, 4, 'defect.jpg', 'Geylin', 'Azucena', 'Orellana', 'Ortiz', '2013-07-30', 'Femenino'),
-(5, 5, 'defect.jpg', 'Josue', 'David', 'Morales', 'Orellana', '1999-02-04', 'Masculino');
+(29, 29, 'defect.jpg', 'Geylin', 'Azucena', 'Orellana', 'Ortiz', '2013-07-30', 'Femenino'),
+(30, 30, 'defect.jpg', 'Geylin', 'Azucena', 'Orellana', 'Ortiz', '2013-07-30', 'Femenino'),
+(31, 31, 'defect.jpg', 'Josue', 'David', 'Morales', 'Orellana', '1999-02-04', 'Masculino');
 
 -- --------------------------------------------------------
 
@@ -193,11 +193,11 @@ CREATE TABLE `tb_usuarios` (
 --
 
 INSERT INTO `tb_usuarios` (`usuario_id`, `correo_user`, `telefono_user`, `clave_user`, `codigo`, `fecha`) VALUES
-(1, 'h28631053@gmail.com', 75762178, 'WmZDMEp5SWRIS1R0Q05ZZ1Vnd1Q4QT09', 'ISL9scZYXv', '2020-04-11 10:49:00'),
-(2, 'moralesorellana170498@gmail.com', 61524588, 'WmZDMEp5SWRIS1R0Q05ZZ1Vnd1Q4QT09', '', '0000-00-00 00:00:00'),
-(3, 'correo@gmail.com', 63022148, 'WmZDMEp5SWRIS1R0Q05ZZ1Vnd1Q4QT09', NULL, '0000-00-00 00:00:00'),
-(4, 'email@gmail.com', 73062020, 'WmZDMEp5SWRIS1R0Q05ZZ1Vnd1Q4QT09', NULL, '0000-00-00 00:00:00'),
-(5, 'david@gmail.com', 61524586, 'WmZDMEp5SWRIS1R0Q05ZZ1Vnd1Q4QT09', NULL, '0000-00-00 00:00:00');
+(1, 'h28631053@gmail.com', 75762178, 'WmZDMEp5SWRIS1R0Q05ZZ1Vnd1Q4QT09', '', '0000-00-00 00:00:00'),
+(2, 'moralesorellana170498@gmail.com', 61524588, 'WmZDMEp5SWRIS1R0Q05ZZ1Vnd1Q4QT09', '', '2020-04-20 00:00:00'),
+(29, 'correo@gmail.com', 63022148, 'WmZDMEp5SWRIS1R0Q05ZZ1Vnd1Q4QT09', NULL, '0000-00-00 00:00:00'),
+(30, 'email@gmail.com', 73062020, 'WmZDMEp5SWRIS1R0Q05ZZ1Vnd1Q4QT09', NULL, '0000-00-00 00:00:00'),
+(31, 'david@gmail.com', 61524586, 'WmZDMEp5SWRIS1R0Q05ZZ1Vnd1Q4QT09', NULL, '0000-00-00 00:00:00');
 
 --
 -- Índices para tablas volcadas
@@ -264,6 +264,12 @@ ALTER TABLE `tb_usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `tb_articulos`
+--
+ALTER TABLE `tb_articulos`
+  MODIFY `articulo_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `tb_comentarios`
 --
 ALTER TABLE `tb_comentarios`
@@ -315,7 +321,7 @@ ALTER TABLE `tb_likes`
 -- Filtros para la tabla `tb_publicaciones`
 --
 ALTER TABLE `tb_publicaciones`
-  ADD CONSTRAINT `tb_publicaciones_ibfk_1` FOREIGN KEY (`fk_articulo_id`) REFERENCES `tb_articulos` (`articulo_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `tb_publicaciones_ibfk_1` FOREIGN KEY (`fk_articulo_id`) REFERENCES `tb_articulos` (`articulo_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
