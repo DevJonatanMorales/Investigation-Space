@@ -1,6 +1,6 @@
 <?php 
 require_once('./dataBase.php');
-class publicacionesModel
+class PublicacionesModel
 {
   public static function savePublicacion($datos)
   {
@@ -47,5 +47,19 @@ class publicacionesModel
     return $publicaciones;
   }
 }
+
+if (isset($_POST['accion'])) {
+  # code...
+} else {
+  session_start();
+  $public = PublicacionesModel::mostrasPublicacion($_SESSION['USER_ID']);
+
+  if ($public === false) {
+    echo json_encode(array('result' => 0));
+  } else {
+    echo json_encode($public);
+  }
+}
+
 
 ?>

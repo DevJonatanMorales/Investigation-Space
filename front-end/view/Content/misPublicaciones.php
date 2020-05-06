@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <?php require_once('../layout/headMain.php'); ?>
-  <!--<script src=""></script>-->
+  <script src="../../js/misPublicaciones.js"></script>
 </head>
 <body>
   <div class="d-flex" id="wrapper"> <!-- Sidebar -->
@@ -33,7 +33,7 @@
             </section>
             
             <!-- nueva publicaciones -->
-            <?php require_once('../layout/newPublicacion.php'); ?>
+            <?php //require_once('../layout/newPublicacion.php'); ?>
           </div>
         </div>
       </div>
