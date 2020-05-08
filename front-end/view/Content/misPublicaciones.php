@@ -20,7 +20,7 @@
 
         <div class="container-fluid">
           <div class="d-flex justify-content-between divMain">
-            <section class="container bg-white col-sm-7 col-md-7 ">
+            <section class="container bg-white col-sm-12 col-md-12 ">
               <nav class="navbar navbar-light bg-success">
                 <a class="navbar-brand Oswald text-white" href="#">Publicaciones</a>
                 <form class="form-inline">
@@ -30,6 +30,10 @@
                   </button>
                 </form>
               </nav>
+
+              <div id="publicaciones" class="form-row py-1">
+                
+              </div>
             </section>
             
             <!-- nueva publicaciones -->
