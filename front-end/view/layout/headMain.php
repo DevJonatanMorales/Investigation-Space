@@ -3,7 +3,7 @@
 <!-- Jquery -->
 <script src="../../js/jquery-3.4.1.min.js"></script>
 <!-- Required meta tags -->
-<link  rel="icon" href="../../img/I-S.png" type="image/png" />
+<link  rel="icon" href="../../img/iconIS.png" type="image/png" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Invetigation-Space</title>
