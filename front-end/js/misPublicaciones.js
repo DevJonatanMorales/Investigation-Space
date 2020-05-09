@@ -3,16 +3,23 @@ function obtenerPubliaciones() {
   $.ajax({
     url: url,
     type: "get",
-    datatype: "json",
     success: function (result) {
+      const datos = JSON.parse(result);
+      let publicaciones = '';
+      datos.forEach(datos => {
+        publicaciones += `<div class="card" style="width: 18rem;" >
+          <img src="../../img/banner.jpg" class="card-img-top" alt="Cargando...">
+          <div class="card-body">
+            <h5 class="card-title">${datos.ArticuloNom}</h5>
+            <p class="card-text">${datos.articuloConte}</p>
+          </div>
+          <div class="card-footer text-muted">
+            fecha de publicacion ${datos.articuloFech}
+          </div>
+        </div>`;
+      });
 
-      let showData = "";
-      $.each(result, function (index, value) {
-        console.log(value);
-
-      })
-      //$("#publicaciones").html(showData);
-
+      $("#publicaciones").html(publicaciones);
     },
     error: function () {
       console.log("No se a podido obtener la informacion");
