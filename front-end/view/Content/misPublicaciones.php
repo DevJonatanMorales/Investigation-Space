@@ -22,15 +22,12 @@
           <div class="d-flex justify-content-between divMain">
             <section class="container bg-white col-sm-12 col-md-12 ">
               <nav class="navbar navbar-light bg-success">
-
-                <button class="btn btn-outline-light my-2 my-sm-0 Open-Sans" type="submit">
-                  <i class="fas fa-plus"></i>
-                  Nueva Publicacion
-                </button>
+                <a class="navbar-brand text-white Oswald" href="#">Mis Publicaciones</a>
                 <form class="form-inline">
-                  <input class="form-control mr-sm-2 Open-Sans" type="text" placeholder="Buscar">
+                  <input class="form-control mr-sm-2 Open-Sans" id="txtBuscar" type="text" placeholder="Buscar">
                   <button class="btn btn-outline-light my-2 my-sm-0 Open-Sans" type="submit">
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-plus"></i>
+                    Nueva Publicacion
                   </button>
                 </form>
               </nav>

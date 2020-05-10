@@ -1,13 +1,13 @@
-function obtenerPubliaciones() {
-  let url = "../../../back-end/models/publicacionesModel.php";
-  $.ajax({
-    url: url,
-    type: "get",
-    success: function (result) {
-      const datos = JSON.parse(result);
-      let publicaciones = '';
-      datos.forEach(datos => {
-        publicaciones += `<div class="card" style="width: 18rem;" >
+//
+function layout(result) {
+
+  if (result == 0) {
+    $("#publicaciones").html("<h3>No hay datos que mostrar</h3>");
+  } else {
+    const datos = JSON.parse(result);
+    let publicaciones = '';
+    datos.forEach(datos => {
+      publicaciones += `<div class="card" style="width: 18rem;" >
           <img src="../../img/banner.jpg" class="card-img-top" alt="Cargando...">
           <div class="card-body">
             <h5 class="card-title">${datos.ArticuloNom}</h5>
@@ -17,29 +17,33 @@ function obtenerPubliaciones() {
             fecha de publicacion ${datos.articuloFech}
           </div>
         </div>`;
-      });
+    });
 
-      $("#publicaciones").html(publicaciones);
-    },
-    error: function () {
-      console.log("No se a podido obtener la informacion");
-    },
-  });
+    $("#publicaciones").html(publicaciones);
+  }
+
 }
-obtenerPubliaciones();
-/*
-showData += `
-        <div class="card" style="width: 18rem;">
-          <img src="../../img/banner.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">${res.ArticuloNom}</h5>
-            <p class="card-text">${res.articuloConte}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        `;
-const numbers = [1, 2, 3, 4, 5];
-$.each(numbers, function (index, value) {
-  console.log(`${index}: ${value}`);
+
+function obtenerPubliaciones(buscar) {
+
+  $.ajax({
+    url: "../../../back-end/models/publicacionesModel.php",
+    type: 'POST',
+    data: { buscar: buscar },
+  })
+    .done(function (resultado) {
+      layout(resultado);
+    })
+}
+
+$(obtenerPubliaciones());
+
+$(document).on('keyup', '#txtBuscar', function () {
+  let valorBusqueda = $(this).val();
+  if (valorBusqueda != "") {
+    obtenerPubliaciones(valorBusqueda);
+  } else {
+    obtenerPubliaciones();
+  }
 });
-*/
+
