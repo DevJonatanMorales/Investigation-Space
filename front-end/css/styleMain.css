@@ -111,6 +111,11 @@ body {
   background-position: center center;
   margin: auto;
 }
+/* separacion entre la publicaciones */
+.margen {
+  margin-right: 5px;
+}
+
 @media (min-width: 768px) {
   #sidebar-wrapper {
     margin-left: 0;

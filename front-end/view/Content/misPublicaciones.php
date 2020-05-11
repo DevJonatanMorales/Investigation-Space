@@ -23,13 +23,13 @@
             <section class="container bg-white col-sm-12 col-md-12 ">
               <nav class="navbar navbar-light bg-success">
                 <a class="navbar-brand text-white Oswald" href="#">Mis Publicaciones</a>
-                <form class="form-inline">
+                <div class="form-inline">
                   <input class="form-control mr-sm-2 Open-Sans" id="txtBuscar" type="text" placeholder="Buscar">
                   <button class="btn btn-outline-light my-2 my-sm-0 Open-Sans" type="submit">
                     <i class="fas fa-plus"></i>
-                    Nueva Publicacion
+                    Nueva Publicación
                   </button>
-                </form>
+                </div>
               </nav>
 
               <div id="publicaciones" class="form-row py-1">
@@ -43,11 +43,31 @@
     </div>
   </div>
 
+  <!-- ventana modal -->
+  <div class="modal fade bd-example-modal-xl" id="myModal" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+      </div>
+    </div>
+  </div>
+
+
   <!-- Menu Toggle Script -->
   <script>
     $("#menu-toggle").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
+    });
+    //modal
+    $(function() {
+    $(document).on('click', 'button[type="submit"]', function(event) {//al hacer click en el boton
+    console.log('click');
+
+        $('.modal-content').load("newPublicacion.php",function(){//llamo al archivo q tiene el contenido
+            $('#myModal').modal({show:true});//cargo la ventana modal
+        });
+      });
     });
   </script>
 </body>
