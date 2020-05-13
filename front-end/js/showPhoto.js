@@ -3,10 +3,10 @@ function readImage(input) {
 
     if (input.files && input.files[0]) {
         let nameArray = input.files[0];
-        
+
         btn.innerText = nameArray.name;
-        console.log(nameArray.name);
-        var reader = new FileReader();
+
+        let reader = new FileReader();
         reader.onload = function (e) {
             $('#blah').attr('src', e.target.result); // Renderizamos la imagen
         }
@@ -15,7 +15,7 @@ function readImage(input) {
 }
 
 $(document).ready(function () {
-    $("#txtFile").on("change", function () {     
+    $("#txtFile").on("change", function () {
         // Código a ejecutar cuando se detecta un cambio de archivo
         readImage(this);
     });
@@ -30,7 +30,7 @@ function emptyFoto() {
         msjError = "seleccione una foto.";
     }
     /* si existe algun error en el formulario */
-    if (datosCorrectos == false) {        
+    if (datosCorrectos == false) {
         Swal.fire({
             icon: 'warning',
             title: 'Advertencia',

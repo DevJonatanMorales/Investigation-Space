@@ -20,7 +20,6 @@ class DataBase {
         //capturamos la conexion
         $conexion = $this->establecerConexion();
         $conexion->close();
-        //return $cerrarConexion;
     }
 
     //funciona para insertar datos o modificar

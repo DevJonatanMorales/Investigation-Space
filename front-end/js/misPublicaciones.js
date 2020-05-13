@@ -6,6 +6,7 @@ function obtenerPubliaciones(buscar) {
     data: { buscar: buscar },
   })
     .done(function (result) {
+
       if (result == 0) {
         $("#publicaciones").html("<h3>No hay datos que mostrar</h3>");
       } else {
@@ -13,10 +14,10 @@ function obtenerPubliaciones(buscar) {
         let publicaciones = '';
         datos.forEach(datos => {
           publicaciones += `<div class="card margen" style="width: 18rem;" >
-          <img src="../../img/banner.jpg" class="card-img-top" alt="Cargando...">
+          <img src="../../img/${datos.articuloImg}" class="card-img-top" alt="Cargando...">
           <div class="card-body">
-            <h5 class="card-title">${datos.ArticuloNom}</h5>
-            <p class="card-text">${datos.articuloConte}</p>
+            <h5 class="card-title">${datos.articuloNom}</h5>
+            <p class="card-text">${datos.articuloDescrip}</p>
           </div>
           <div class="card-footer text-muted">
             fecha de publicacion ${datos.articuloFech}
