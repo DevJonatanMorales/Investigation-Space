@@ -116,6 +116,11 @@ body {
   margin-right: 5px;
 }
 
+/**/
+#publicaciones {
+  height: 600px;
+  overflow-y: scroll;
+}
 @media (min-width: 768px) {
   #sidebar-wrapper {
     margin-left: 0;
