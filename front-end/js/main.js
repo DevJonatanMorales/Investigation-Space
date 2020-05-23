@@ -1,6 +1,7 @@
 function cardPublicacion(data) {
   const datos = JSON.parse(data);
   let id = datos[0]['publicacionId'];
+
   $("#publicacionId").val(id);
 
   let publicaciones = '';
@@ -18,7 +19,9 @@ function cardPublicacion(data) {
   });
 
   $("#publicaciones").html(publicaciones);
+
 }
+
 function obtenerPublicaciones() {
   let url = "../../../back-end/models/indexModel.php";
   $.ajax({
@@ -30,7 +33,7 @@ function obtenerPublicaciones() {
         console.log("No ay datos q mostrar");
 
       } else {
-        cardPublicacion(result)
+        cardPublicacion(result);
       }
 
     },
@@ -39,9 +42,41 @@ function obtenerPublicaciones() {
     }
   });
 }
-let btn = $('#publicacionId').val();
-console.log('el valor es ' + btn);
+
+function actualizarPublicaciones() {
+  let url = "../../../back-end/models/indexModel.php";
+  let idActual = $('#publicacionId').val();
+  $.ajax({
+    url: url,
+    type: 'post',
+    success: function (result) {
+
+      if (result === 0) {
+        console.log("No ay datos q mostrar");
+      } else {
+        const idNuevo = JSON.parse(result);
+        console.log("Id Actual " + idActual + " Id Nuevo " + idNuevo[0]['publicacionId']);
+        if (idActual < idNuevo) {
+          cardPublicacion(result);
+        }
+      }
+
+    },
+    error: function () {
+      console.log("No se a podido obtener la informacion :(");
+    }
+  });
+}
+
+function main() {
+  if ($('#publicacionId').val() === "") {
+    obtenerPublicaciones();
+  } else {
+    actualizarPublicaciones();
+  }
+  setTimeout('main()', 10000);
+}
 
 $(document).ready(function () {
-  obtenerPublicaciones();
+  main()
 });

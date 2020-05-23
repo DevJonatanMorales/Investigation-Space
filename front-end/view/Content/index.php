@@ -25,9 +25,9 @@
 
                     <div class="container-fluid">
                         <div class="d-flex justify-content-between divMain">
+                            <input type="hidden" id="publicacionId" >
                             <div id="publicaciones" class="section col-sm-7 col-md-7 col-lg-7">
-                                <input type="hidden" id="publicacionId">
-                                <h1>publicaciones</h1>
+
                             </div>
                             <?php require_once('../layout/sectionListAmigos.php'); ?>
                         </div>

@@ -44,7 +44,7 @@
                                                 <input class='txtCampoForm Open-Sans' type='password' name="txtClaveActual" id='txtClaveActual' value="" pattern="[A-Z]{1}[a-z]{5}[0-9]{2}" onblur="campoVlr()" onkeyup="campoVlr()">
                                             </div>
                                             <div class='form-group col-lg-12'>
-                                                <button class='btn btn-primary my-4 Oswald' id='btnActualizar' type='submi'>
+                                                <button class='btn btn-primary my-4 Oswald' id="btnActualizar" type='submi'>
                                                 <i class="fas fa-user-cog"></i>
                                                     Actualizar
                                                 </button>

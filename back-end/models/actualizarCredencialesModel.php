@@ -1,5 +1,6 @@
 <?php
 require_once('./dataBase.php');
+sleep(1);
 //clase para actualizar la CLAVE
 class ActualizarCredencialesModel {
   //funcion que recupera la CLAVE actual
