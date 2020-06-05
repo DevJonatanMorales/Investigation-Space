@@ -121,6 +121,47 @@ body {
   height: 600px;
   overflow-y: scroll;
 }
+/* boton flotante para actualizar las publicaciones */
+.btnActualizar {
+  text-decoration: none;
+  background-color: #28A745;
+  color: #ffffff;
+  padding: 5px;
+  width: 45%;
+  border: 1px solid #28A745;
+  border-radius: 6px;
+  float: right;
+  z-index: 1000;
+  position:fixed;
+}
+.btnActualizarShow {
+  display:scroll;
+  text-decoration: none;
+  background-color: #28A745;
+  color: #ffffff;
+  padding: 5px;
+  width: 45%;
+  border: 1px solid #28A745;
+  border-radius: 6px;
+  float: right;
+  z-index: 1000;
+  position:fixed;
+}
+
+.btnActualizarNone {
+  display:none;
+  text-decoration: none;
+  background-color: #28A745;
+  color: #ffffff;
+  padding: 5px;
+  width: 45%;
+  border: 1px solid #28A745;
+  border-radius: 6px;
+  float: right;
+  z-index: 1000;
+  position:fixed;
+}
+
 @media (min-width: 768px) {
   #sidebar-wrapper {
     margin-left: 0;

@@ -24,8 +24,12 @@
                     </nav>
 
                     <div class="container-fluid">
-                        <div class="d-flex justify-content-between divMain">
+                        <div class="d-flex justify-content-between ">
                             <input type="hidden" id="publicacionId" >
+                            <button id="actualizarID" type="submit">
+                                <i class="fas fa-sync"></i>
+                                Nuevas Publicaciones
+                            </button>
                             <div id="publicaciones" class="section col-sm-7 col-md-7 col-lg-7">
 
                             </div>

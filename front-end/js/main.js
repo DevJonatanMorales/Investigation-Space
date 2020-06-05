@@ -1,7 +1,7 @@
+// funcion que se encarga de pintar en patalla las publicaciones
 function cardPublicacion(data) {
   const datos = JSON.parse(data);
   let id = datos[0]['publicacionId'];
-
   $("#publicacionId").val(id);
 
   let publicaciones = '';
@@ -23,6 +23,8 @@ function cardPublicacion(data) {
 }
 
 function obtenerPublicaciones() {
+  $("#actualizarID").removeClass("btnActualizarShow");
+  $("#actualizarID").addClass("btnActualizarNone");
   let url = "../../../back-end/models/indexModel.php";
   $.ajax({
     url: url,
@@ -42,9 +44,10 @@ function obtenerPublicaciones() {
     }
   });
 }
-
+// funcion que se encarga de decidir si es necesario actualizar la pag.
 function actualizarPublicaciones() {
   let url = "../../../back-end/models/indexModel.php";
+  //se obtiene el id de a la ultima publicacion
   let idActual = $('#publicacionId').val();
   $.ajax({
     url: url,
@@ -55,9 +58,14 @@ function actualizarPublicaciones() {
         console.log("No ay datos q mostrar");
       } else {
         const idNuevo = JSON.parse(result);
-        console.log("Id Actual " + idActual + " Id Nuevo " + idNuevo[0]['publicacionId']);
-        if (idActual < idNuevo) {
-          cardPublicacion(result);
+        //obtenemos el numero de las nuevas publicaciones
+        let diferencia = idActual - idNuevo[0]["publicacionId"];
+
+        if (diferencia > 4) {
+          console.log("la diferenciaes " + diferencia);
+          $("#actualizarID").removeClass("btnActualizarNone");
+          $("#actualizarID").addClass("btnActualizarShow");
+          /* si la diferencia en mayor a 4 es decir mostramos el boton actualizar */
         }
       }
 
@@ -67,7 +75,12 @@ function actualizarPublicaciones() {
     }
   });
 }
-
+/*
+funcion principal,
+si #publicacionId esta vacio significa q se acaba de iniciar sesion
+y ejecutamos la funcion q obtiene las publicaciones sino
+ejecutamos la funcion q se encargara de buscar las nuevas publicaciones
+*/
 function main() {
   if ($('#publicacionId').val() === "") {
     obtenerPublicaciones();
@@ -79,4 +92,8 @@ function main() {
 
 $(document).ready(function () {
   main()
+});
+
+$(document).on("click", "#actualizarID", function () {
+  obtenerPublicaciones();
 });
