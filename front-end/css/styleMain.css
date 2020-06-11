@@ -114,6 +114,7 @@ body {
 /* separacion entre la publicaciones */
 .margen {
   margin-right: 5px;
+  padding: 0px 5px;
 }
 
 /**/

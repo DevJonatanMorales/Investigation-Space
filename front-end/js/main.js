@@ -7,13 +7,19 @@ function cardPublicacion(data) {
   let publicaciones = '';
   datos.forEach(datos => {
     publicaciones += `<div class="card margen my-2" >
+          <div class="media bg-white py-1">
+            <img class="mr-3 rounded-circle" src="../../img/${datos.foto}" class="mr-3" alt="..." width="64" height="64" >
+            <div class="media-body">
+              <h5 class="mt-0 my-3 Oswald">${datos.user}</h5>
+            </div>
+          </div>
           <img src="../../img/${datos.articuloImg}" class="card-img-top my-2" alt="Cargando...">
           <div class="card-body">
             <h5 class="card-title">${datos.articuloNom}</h5>
             <p class="card-text">${datos.articuloDescrip}</p>
           </div>
           <div class="card-footer text-muted">
-            fecha de publicacion ${datos.articuloFech}
+            <a href="#" class="card-link">fecha de publicacion ${datos.articuloFech}</a>            
           </div>
         </div>`;
   });
