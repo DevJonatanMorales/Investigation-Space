@@ -1,6 +1,8 @@
 // funcion que se encarga de pintar en patalla las publicaciones
 function cardPublicacion(data) {
   const datos = JSON.parse(data);
+  //console.log(datos);
+
   let id = datos[0]['publicacionId'];
   $("#publicacionId").val(id);
 
@@ -15,11 +17,11 @@ function cardPublicacion(data) {
           </div>
           <img src="../../img/${datos.articuloImg}" class="card-img-top my-2" alt="Cargando...">
           <div class="card-body">
-            <h5 class="card-title">${datos.articuloNom}</h5>
+            <h5 id="${datos.articuloConte}" class="card-title">${datos.articuloNom}</h5>
             <p class="card-text">${datos.articuloDescrip}</p>
           </div>
           <div class="card-footer text-muted">
-            <a href="#" class="card-link">fecha de publicacion ${datos.articuloFech}</a>            
+            <a href="#" >fecha de publicacion ${datos.articuloFech}</a>            
           </div>
         </div>`;
   });
@@ -67,7 +69,7 @@ function actualizarPublicaciones() {
         //obtenemos el numero de las nuevas publicaciones
         let diferencia = idActual - idNuevo[0]["publicacionId"];
 
-        if (diferencia > 4) {
+        if (diferencia > 0) {
           console.log("la diferenciaes " + diferencia);
           $("#actualizarID").removeClass("btnActualizarNone");
           $("#actualizarID").addClass("btnActualizarShow");
@@ -102,4 +104,14 @@ $(document).ready(function () {
 
 $(document).on("click", "#actualizarID", function () {
   obtenerPublicaciones();
+});
+/* 
+  en esta parte al dar click en el nombre de la publicacion
+  obtenemos el id que es el mismo id que esta en la BD y es el
+  que enviamos a la pagina donde mostramos la publicacion
+*/
+$(document).on("click", ".card-title", function () {
+  let id = this.id;
+  console.log(id);
+  window.open('./mostrarPublicaciones.php?publicacion=' + id);
 });
