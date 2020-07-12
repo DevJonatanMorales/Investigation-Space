@@ -15,13 +15,13 @@ function enviarCorreo($name,$email,$body){
     $mail->Port = 587;
     $mail->SMTPAuth = true; 
     $mail->SMTPSecure = 'tls';   
-    $mail->Username = 'invetigationspace@gmail.com';
-    $mail->Password = '75762178';  
+    $mail->Username = '';//coloque el correo con el que se enviaran los email
+    $mail->Password = '';//coloque la contraseña del correo
 
 
-    $mail->setFrom('invetigationspace@gmail.com', $name);
+    $mail->setFrom('', $name);//correo
     $mail->addAddress($email);
-    $mail->addReplyTo('invetigationspace@gmail.com', 'Administrador');
+    $mail->addReplyTo('', 'Administrador');//correo
 
     $mail->isHTML(true);  
     $mail->Subject = 'Restaurar Contraseña';
